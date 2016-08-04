@@ -10,7 +10,7 @@ add_definitions(-D_UNICODE )
 fix_default_compiler_settings_()
 
 # Add include dir
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include)
 
 # Add executable build target
 add_executable(crprober ${source_files} ${header_files})

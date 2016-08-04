@@ -10,14 +10,14 @@ add_definitions(-D_UNICODE )
 fix_default_compiler_settings_()
 
 # Add include dir
-include_directories(${CMAKE_SOURCE_DIR}/include 
-					${CMAKE_SOURCE_DIR}/reporting/CrashRpt
-					${CMAKE_SOURCE_DIR}/thirdparty/wtl 
-					${CMAKE_SOURCE_DIR}/thirdparty/zlib
-					${CMAKE_SOURCE_DIR}/thirdparty/minizip  
-					${CMAKE_SOURCE_DIR}/thirdparty/jpeg 
-					${CMAKE_SOURCE_DIR}/thirdparty/libpng 
-					${CMAKE_SOURCE_DIR}/thirdparty/tinyxml )
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include 
+					${CMAKE_CURRENT_SOURCE_DIR}/../../reporting/CrashRpt
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/wtl 
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/zlib
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/minizip  
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/jpeg 
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/libpng 
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/tinyxml )
 
 # Add executable build target
 add_executable(ConsoleDemo ${source_files} ${header_files})

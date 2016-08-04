@@ -18,8 +18,8 @@ add_definitions(-D_UNICODE )
 fix_default_compiler_settings_()
 
 # Add include dir
-include_directories(${CMAKE_SOURCE_DIR}/include
-					${CMAKE_SOURCE_DIR}/thirdparty/wtl)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../include
+					${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/wtl)
 
 # Add executable build target
 add_executable(WTLDemo WIN32 ${source_files} ${header_files})
@@ -36,18 +36,18 @@ if(CMAKE_CL_64)
 ADD_CUSTOM_COMMAND(
     TARGET WTLDemo
     POST_BUILD
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/thirdparty/dbghelp/bin\\dbghelp.dll\" \"${CMAKE_BINARY_DIR}/bin\\x64\""
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/demos/WTLDemo\\dummy.ini\" \"${CMAKE_BINARY_DIR}/bin\\x64\""
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/demos/WTLDemo\\dummy.log\" \"${CMAKE_BINARY_DIR}/bin\\x64\""
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/lang_files\\crashrpt_lang_EN.ini\" \"${CMAKE_BINARY_DIR}/bin\\x64\\crashrpt_lang.ini\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/dbghelp/bin\\dbghelp.dll\" \"${CMAKE_BINARY_DIR}/bin\\x64\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../demos/WTLDemo\\dummy.ini\" \"${CMAKE_BINARY_DIR}/bin\\x64\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../demos/WTLDemo\\dummy.log\" \"${CMAKE_BINARY_DIR}/bin\\x64\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../lang_files\\crashrpt_lang_EN.ini\" \"${CMAKE_BINARY_DIR}/bin\\x64\\crashrpt_lang.ini\""
 )
 else(CMAKE_CL_64)
 ADD_CUSTOM_COMMAND(
     TARGET WTLDemo
     POST_BUILD
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/thirdparty/dbghelp/bin\\dbghelp.dll\" \"${CMAKE_BINARY_DIR}/bin\""
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/demos/WTLDemo\\dummy.ini\" \"${CMAKE_BINARY_DIR}/bin\""
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/demos/WTLDemo\\dummy.log\" \"${CMAKE_BINARY_DIR}/bin\""
-    COMMAND copy ARGS "\"${CMAKE_SOURCE_DIR}/lang_files\\crashrpt_lang_EN.ini\" \"${CMAKE_BINARY_DIR}/bin\\crashrpt_lang.ini\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/dbghelp/bin\\dbghelp.dll\" \"${CMAKE_BINARY_DIR}/bin\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../demos/WTLDemo\\dummy.ini\" \"${CMAKE_BINARY_DIR}/bin\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../demos/WTLDemo\\dummy.log\" \"${CMAKE_BINARY_DIR}/bin\""
+    COMMAND copy ARGS "\"${CMAKE_CURRENT_SOURCE_DIR}/../../lang_files\\crashrpt_lang_EN.ini\" \"${CMAKE_BINARY_DIR}/bin\\crashrpt_lang.ini\""
 )
 endif(CMAKE_CL_64)

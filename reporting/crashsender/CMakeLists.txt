@@ -11,8 +11,8 @@ add_msvc_precompiled_header(stdafx.h ./stdafx.cpp srcs_using_precomp)
 
 list(APPEND source_files	
 	./CrashSender.rc 
-	${CMAKE_SOURCE_DIR}/reporting/CrashRpt/Utility.cpp 
-	${CMAKE_SOURCE_DIR}/reporting/CrashRpt/SharedMem.cpp)
+	${CMAKE_CURRENT_SOURCE_DIR}/../../reporting/CrashRpt/Utility.cpp 
+	${CMAKE_CURRENT_SOURCE_DIR}/../../reporting/CrashRpt/SharedMem.cpp)
 	
 # Define _UNICODE (use wide-char encoding)
 add_definitions(-D_UNICODE )
@@ -20,22 +20,22 @@ add_definitions(-D_UNICODE )
 fix_default_compiler_settings_()
 
 # Add include dir
-include_directories( ${CMAKE_SOURCE_DIR}/include 
-                            ${CMAKE_SOURCE_DIR}/reporting/CrashRpt
-                            ${CMAKE_SOURCE_DIR}/thirdparty/wtl 
-                            ${CMAKE_SOURCE_DIR}/thirdparty/zlib
-                            ${CMAKE_SOURCE_DIR}/thirdparty/minizip  
-                            ${CMAKE_SOURCE_DIR}/thirdparty/jpeg 
-                            ${CMAKE_SOURCE_DIR}/thirdparty/libpng 
-                            ${CMAKE_SOURCE_DIR}/thirdparty/tinyxml
-                            ${CMAKE_SOURCE_DIR}/thirdparty/dbghelp/include 
-							${CMAKE_SOURCE_DIR}/thirdparty/libogg/include
-							${CMAKE_SOURCE_DIR}/thirdparty/libtheora/include)
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../../include 
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../reporting/CrashRpt
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/wtl 
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/zlib
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/minizip  
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/jpeg 
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/libpng 
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/tinyxml
+                            ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/dbghelp/include 
+							${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/libogg/include
+							${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/libtheora/include)
 
 if(NOT CMAKE_CL_64)
-	link_directories( ${CMAKE_SOURCE_DIR}/thirdparty/dbghelp/lib )
+	link_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/dbghelp/lib )
 else(NOT CMAKE_CL_64)
-	link_directories( ${CMAKE_SOURCE_DIR}/thirdparty/dbghelp/lib/amd64 )
+	link_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../../thirdparty/dbghelp/lib/amd64 )
 endif(NOT CMAKE_CL_64)
 
 # Add executable build target
